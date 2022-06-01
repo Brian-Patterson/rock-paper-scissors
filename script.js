@@ -10,7 +10,7 @@ function computerPlay() {
 }
 
 function letsPlay(playerSelection, computerSelection) {
-    playerSelection = "rock";
+    playerSelection = prompt("rock, paper, or scissors?")
     computerSelection = computerPlay();
 
     switch (playerSelection+computerSelection) {
@@ -27,9 +27,17 @@ function letsPlay(playerSelection, computerSelection) {
         case "rockrock":
         case "paperpaper":
         case "scissorsscissors":
-            result = "it's a tie"
-            break;       
+            result = "it's a tie";
+            break;
+        default: 
+            result = "try again";       
     }
     return result; 
-
 };
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        letsPlay()    
+        console.log(result)
+    }
+}
