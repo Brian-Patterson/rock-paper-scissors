@@ -40,4 +40,10 @@ function game() {
         letsPlay()    
         console.log(result)
     }
+    if(result = "you win" > 2){
+        console.log("player wins!");
+    } else { 
+        console.log("computer wins!");
+    }
+
 }
