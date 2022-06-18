@@ -23,9 +23,7 @@ sBtn.addEventListener("click", () => {
 });
 
 const score = document.querySelector('#score');
-let pWins = 1;
-let cWins = 1;
-let tGame = 1; 
+
 const pScore = document.createElement('div');
 pScore.classList.add('pScore');
 pScore.textContent = "Player Score: 0";
@@ -41,7 +39,10 @@ tieGame.classList.add('tieGame');
 tieGame.textContent = "Tie Game: 0";
 score.appendChild(tieGame); 
 
-let log = " "
+let pWins = 1;
+let cWins = 1;
+let tGame = 1; 
+
 function letsPlay(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     switch (playerSelection+computerSelection) {
@@ -64,7 +65,7 @@ function letsPlay(playerSelection, computerSelection) {
             log = "try again";       
     }
     tally();
-    console.log(log); 
+    declaration(); 
 };
 
 function tally () {
@@ -77,17 +78,10 @@ function tally () {
     }
 }
 
-
-
-function game(playerSelection, computerSelection) {
-    for (let i = 0; i < 5; i++) {
-        letsPlay(playerSelection, computerSelection)    
-        console.log(result)
+function declaration () {
+    if (pWins > 4){
+        pScore.textContent = "PLAYER WINS!!!";
+    } else if (cWins > 4){
+        cScore.textContent = "COMPUTER WINS!!!";
     }
-    if(result = "you win" > 2){
-        console.log("player wins!");
-    } else { 
-        console.log("computer wins!");
-    }
-
 }
